@@ -1,9 +1,9 @@
 .trick {
-  background: white;
-  width: 30%;
-  margin: 1%;
+  background: #eff8ff;
+  width: 100%;
   border-radius: 20px;
   padding: 1%;
+  text-align: center;
 }
 
 .tutorial {
