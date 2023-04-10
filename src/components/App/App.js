@@ -2,6 +2,7 @@ import { Component } from 'react';
 import './App.css';
 import { getTricks } from '../../apiCalls';
 import Trick from '../Trick/Trick';
+import Form from '../Form/Form';
 
 class App extends Component {
   constructor() {
@@ -19,6 +20,7 @@ class App extends Component {
     return (
       <div className='App'>
         <h1>Sick Trick Wish List</h1>
+        <Form />
         <section className='tricks'>
         {this.state.allTricks.map(trick => <Trick key={trick.name} trick={trick}/>)}
         </section>
