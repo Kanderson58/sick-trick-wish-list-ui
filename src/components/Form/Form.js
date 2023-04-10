@@ -6,7 +6,7 @@ class Form extends Component {
     super();
     this.state = {
       stance: '',
-      trickName: '',
+      name: '',
       obstacle: '',
       tutorial: ''
     }
@@ -18,7 +18,7 @@ class Form extends Component {
 
   submitTrick = (event) => {
     event.preventDefault()
-    console.log(this.state)
+    this.props.addNewTrick(this.state)
   }
 
   render() {
@@ -31,7 +31,7 @@ class Form extends Component {
         </select>
 
         <input 
-          id='trickName'
+          id='name'
           type='text' 
           placeholder='Name of Trick' 
           onChange={this.handleChange} >
