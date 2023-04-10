@@ -24,7 +24,7 @@ class Form extends Component {
   render() {
     return (
       <form>
-        <select id='stance' onChange={this.handleChange}>
+        <select id='stance' onChange={this.handleChange} >
           <option value='none'>Choose your Stance</option>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
@@ -37,7 +37,7 @@ class Form extends Component {
           onChange={this.handleChange} >
         </input>
 
-        <select id='obstacle' onChange={this.handleChange}>
+        <select id='obstacle' onChange={this.handleChange} >
           <option value='none'>Choose your Obstacle</option>
           <option value='flat ground'>Flatground</option>
           <option value='ledge'>Ledge</option>
