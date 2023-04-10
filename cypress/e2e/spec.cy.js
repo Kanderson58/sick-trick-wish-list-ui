@@ -36,6 +36,29 @@ describe('empty spec', () => {
   });
 
   it('should show new trick when user submits the form', () => {
+    cy.intercept('POST', 'http://localhost:3001/api/v1/tricks', {
+      statusCode: 200
+    });
+
+    cy.intercept('GET', 'http://localhost:3001/api/v1/tricks', 
+      [
+        { 
+          stance: 'regular', 
+          name: 'kickflip', 
+          obstacle: 'flat ground', 
+          tutorial: 'www.learn2skate.com', 
+          id: 1
+        }, 
+        { 
+          stance: 'regular', 
+          name: 'really cool trick', 
+          obstacle: 'pool', 
+          tutorial: 'www.reallycooltrick.com', 
+          id: 2
+        }
+      ]
+    );
+
     cy.get('#stance').select('regular')
       .get('#name').type('really cool trick')
       .get('#obstacle').select('pool')

@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import { getTricks } from '../../apiCalls';
+import { getTricks, addTrick } from '../../apiCalls';
 import Trick from '../Trick/Trick';
 import Form from '../Form/Form';
 
@@ -17,9 +17,12 @@ class App extends Component {
   }
   
   addNewTrick = (trick) => {
-    trick.id = this.state.allTricks.length + 1
-    this.state.allTricks.push(trick)
-    this.setState({ allTricks: this.state.allTricks})
+    addTrick(trick)
+    getTricks().then(tricks => this.setState({ allTricks: tricks}))
+
+    // trick.id = this.state.allTricks.length + 1
+    // this.state.allTricks.push(trick)
+    // this.setState({ allTricks: this.state.allTricks})
   }
   
   render() {
