@@ -2,12 +2,12 @@ export const getTricks = () => {
   return fetch('http://localhost:3001/api/v1/tricks')
     .then(response => {
       if(response.ok) {
-        return response.json()
+        return response.json();
       } else {
-        throw new Error(response.errorText)
+        throw new Error(response.errorText);
       }
     })
-    .catch(error => console.log(error))
+    .catch(error => console.log(error));
 }
 
 export const addTrick = (trick) => {
@@ -17,5 +17,5 @@ export const addTrick = (trick) => {
       "Content-type": "application/json"
     },
     body: JSON.stringify(trick)
-  })
+  });
 }

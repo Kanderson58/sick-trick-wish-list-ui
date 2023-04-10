@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import './App.css';
-import { getTricks, addTrick } from '../../apiCalls';
+import { getTricks, addTrick, deleteTrick } from '../../apiCalls';
 import Trick from '../Trick/Trick';
 import Form from '../Form/Form';
 
@@ -13,16 +13,12 @@ class App extends Component {
   }
 
   componentDidMount = () => {
-    getTricks().then(tricks => this.setState({ allTricks: tricks}))
+    getTricks().then(tricks => this.setState({ allTricks: tricks}));
   }
   
   addNewTrick = (trick) => {
-    addTrick(trick)
-    getTricks().then(tricks => this.setState({ allTricks: tricks}))
-
-    // trick.id = this.state.allTricks.length + 1
-    // this.state.allTricks.push(trick)
-    // this.setState({ allTricks: this.state.allTricks})
+    addTrick(trick);
+    getTricks().then(tricks => this.setState({ allTricks: tricks}));
   }
   
   render() {
@@ -31,7 +27,7 @@ class App extends Component {
         <h1>Sick Trick Wish List</h1>
         <Form addNewTrick={this.addNewTrick} />
         <section className='tricks'>
-        {this.state.allTricks.map(trick => <Trick key={trick.name} trick={trick}/>)}
+        {this.state.allTricks.map(trick => <Trick key={trick.name} trick={trick} />)}
         </section>
       </div>
     );

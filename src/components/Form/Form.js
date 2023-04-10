@@ -13,12 +13,12 @@ class Form extends Component {
   }
 
   handleChange = (event) => {
-    this.setState({[event.target.id]: event.target.value})
+    this.setState({[event.target.id]: event.target.value});
   }
 
   submitTrick = (event) => {
-    event.preventDefault()
-    this.props.addNewTrick(this.state)
+    event.preventDefault();
+    this.props.addNewTrick(this.state);
   }
 
   render() {

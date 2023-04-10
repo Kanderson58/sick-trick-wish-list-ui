@@ -1,6 +1,6 @@
 import './Trick.css'
 
-const Trick = ({trick}) => {
+const Trick = ({trick, removeTrick}) => {
   return (
     <div className='trick'>
       <p>{trick.name}</p>
