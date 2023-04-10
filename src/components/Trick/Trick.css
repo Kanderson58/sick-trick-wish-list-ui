@@ -1,0 +1,12 @@
+.trick {
+  background: white;
+  width: 30%;
+  margin: 1%;
+  border-radius: 20px;
+  padding: 1%;
+}
+
+.tutorial {
+  display: flex;
+  flex-direction: column;
+}

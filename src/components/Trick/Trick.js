@@ -1,9 +1,13 @@
 import './Trick.css'
 
-const Trick = () => {
+const Trick = ({trick}) => {
   return (
     <div className='trick'>
-
+      <p>{trick.name}</p>
+      <p>Obstacle: {trick.obstacle}</p>
+      <p className='tutorial'>Link to tutorial: 
+        <a href={trick.tutorial}>{trick.tutorial}</a>
+      </p>
     </div>
   )
 }
