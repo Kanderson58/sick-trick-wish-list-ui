@@ -12,16 +12,32 @@ class Form extends Component {
     }
   }
 
+  handleChange = (event) => {
+    this.setState({[event.target.id]: event.target.value})
+  }
+
+  submitTrick = (event) => {
+    event.preventDefault()
+    console.log(this.state)
+  }
+
   render() {
     return (
-      <div className='form'>
-        <select id='stance'>
+      <form>
+        <select id='stance' onChange={this.handleChange}>
           <option value='none'>Choose your Stance</option>
           <option value='regular'>Regular</option>
           <option value='switch'>Switch</option>
         </select>
-        <input type='text' placeholder='Name of Trick' value={this.state.trickName}></input>
-        <select id='obstacle'>
+
+        <input 
+          id='trickName'
+          type='text' 
+          placeholder='Name of Trick' 
+          onChange={this.handleChange} >
+        </input>
+
+        <select id='obstacle' onChange={this.handleChange}>
           <option value='none'>Choose your Obstacle</option>
           <option value='flat ground'>Flatground</option>
           <option value='ledge'>Ledge</option>
@@ -29,9 +45,16 @@ class Form extends Component {
           <option value='stairs'>Stairs</option>
           <option value='pool'>Pool</option>
         </select>
-        <input type='text' placeholder='Link to Tutorial' value={this.state.tutorial}></input>
-        <button>Send It!</button>
-      </div>
+
+        <input
+          id='tutorial' 
+          type='text' 
+          placeholder='Link to Tutorial'
+          onChange={this.handleChange} >
+        </input>
+
+        <button onClick={this.submitTrick}>Send It!</button>
+      </form>
     )
   }
 }
